@@ -1,5 +1,6 @@
 using DataAccess.Entities;
 using DataAccess.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,7 +19,7 @@ public static class DataAcessExtensions
             }
         );
 
-        services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<DataContext>();
+        services.AddDefaultIdentity<ApplicationUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<DataContext>();
         services.AddScoped<IDataContext>(provider => provider.GetRequiredService<DataContext>());
         services.AddScoped<IAccountManager, AccountManager>();
         return services;

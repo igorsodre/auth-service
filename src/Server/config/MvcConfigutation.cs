@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
+using Server.Middlewares;
 
 namespace Server.config;
 
@@ -9,7 +10,12 @@ public class MvcConfigutation : IConfigurationInstaller
     {
         services.AddAutoMapper(typeof(Program));
         services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
-        services.AddControllers()
+        services.AddControllers(
+                options => {
+                    options.Filters.Add<IncomingRequestDataValidationMiddleware>();
+                    options.Filters.Add<KnowExceptionsMiddleware>();
+                }
+            )
             .AddFluentValidation(
                 options => {
                     options.DisableDataAnnotationsValidation = true;
