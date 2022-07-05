@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "SqlServer": "Server=localhost,1433;Database=Development;User Id=sa;Password=yourStrong(@@Password12;"
+  }
+}

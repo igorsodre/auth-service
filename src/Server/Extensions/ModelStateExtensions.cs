@@ -9,7 +9,7 @@ public static class ModelStateExtensions
     {
         return new ErrorResponse
         {
-            ErrorMessages = modelState.Where(x => x.Value?.Errors.Count > 0)
+            Errors = modelState.Where(x => x.Value?.Errors.Count > 0)
                 .SelectMany(
                     validationResult => validationResult.Value?.Errors.Select(message => message.ErrorMessage) ??
                                         Enumerable.Empty<string>()

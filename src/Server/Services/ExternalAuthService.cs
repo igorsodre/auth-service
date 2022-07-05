@@ -2,13 +2,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using DataAccess.Entities;
 using Google.Apis.Auth;
-using Microsoft.Extensions.Options;
 using Server.config;
-using Server.config.AuthProviders;
-using Server.Exceptions;
 using Server.Interfaces;
 using Server.Models.Domain;
-using Server.Models.ResponseDtos;
 
 namespace Server.Services;
 

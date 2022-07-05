@@ -8,6 +8,6 @@ public class ExternalToDomainProfile : Profile
 {
     public ExternalToDomainProfile()
     {
-        CreateMap<ExternalAuthDto, ExternalAuthPayload>();
+        CreateMap<ExternalAuthRequest, ExternalAuthPayload>();
     }
 }

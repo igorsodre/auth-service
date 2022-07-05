@@ -6,7 +6,7 @@ using Server.Interfaces;
 
 namespace Server.Services;
 
-class TokenService : ITokenService
+public class TokenService : ITokenService
 {
     private readonly SymmetricSecurityKey _accesskey;
     private readonly SymmetricSecurityKey _refreshKey;

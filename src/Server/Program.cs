@@ -1,4 +1,5 @@
 using Server.Extensions.Configuration;
+using Server.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.UseMiddleware<KnownExceptionsMiddleware>();
 app.MapControllers();
 
 app.Run();

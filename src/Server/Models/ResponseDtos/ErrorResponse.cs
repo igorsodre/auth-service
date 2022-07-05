@@ -2,5 +2,5 @@ namespace Server.Models.ResponseDtos;
 
 public class ErrorResponse
 {
-    public IList<string> ErrorMessages { get; set; } = new List<string>();
+    public IList<string> Errors { get; set; } = new List<string>();
 }

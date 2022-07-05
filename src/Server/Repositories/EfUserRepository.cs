@@ -7,12 +7,12 @@ using Server.Models.Domain;
 
 namespace Server.Repositories;
 
-public class UserRepository : IUserRepository
+public class EfUserRepository : IUserRepository
 {
     private readonly IAccountManager _accountManager;
     private readonly IMapper _mapper;
 
-    public UserRepository(IAccountManager accountManager, IMapper mapper)
+    public EfUserRepository(IAccountManager accountManager, IMapper mapper)
     {
         _accountManager = accountManager;
         _mapper = mapper;
