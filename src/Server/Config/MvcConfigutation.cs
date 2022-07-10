@@ -21,6 +21,19 @@ public class MvcConfigutation : IConfigurationInstaller
                 }
             );
 
+        services.AddCors(
+            options => {
+                options.AddDefaultPolicy(
+                    policyBuilder => {
+                        policyBuilder.WithOrigins(configuration["Cors:AllowedOrigins"])
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+                    }
+                );
+            }
+        );
+
         AddDependencyInjection(services);
     }
 
