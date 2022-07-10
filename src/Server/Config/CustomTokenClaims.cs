@@ -1,4 +1,4 @@
-namespace Server.config;
+namespace Server.Config;
 
 public static class CustomTokenClaims
 {

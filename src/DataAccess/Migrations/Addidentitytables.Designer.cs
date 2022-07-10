@@ -13,7 +13,7 @@ namespace DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20220705022117_add identity tables")]
-    partial class addidentitytables
+    partial class Addidentitytables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

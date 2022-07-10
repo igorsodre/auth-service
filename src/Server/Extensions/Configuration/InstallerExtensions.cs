@@ -1,4 +1,4 @@
-using Server.config;
+using Server.Config;
 
 namespace Server.Extensions.Configuration;
 

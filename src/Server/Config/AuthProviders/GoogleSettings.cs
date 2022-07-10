@@ -1,4 +1,4 @@
-namespace Server.config.AuthProviders;
+namespace Server.Config.AuthProviders;
 
 public class GoogleSettings
 {

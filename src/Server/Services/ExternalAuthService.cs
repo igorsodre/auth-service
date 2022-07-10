@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using DataAccess.Entities;
 using Google.Apis.Auth;
-using Server.config;
+using Server.Config;
 using Server.Interfaces;
 using Server.Models.Domain;
 
@@ -47,7 +47,7 @@ public class ExternalAuthService : IExternalAuthService
         return (await _userRepository.FindByEmail(idTokenInfo.Email))!;
     }
 
-    private (string accessToken, string refreshtoken) GenerateTokens(ApplicationUser user)
+    private (string AccessToken, string Refreshtoken) GenerateTokens(ApplicationUser user)
     {
         var accessToken = _tokenService.CreateAccessToken(
             new List<Claim>

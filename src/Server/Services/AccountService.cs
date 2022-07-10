@@ -1,6 +1,6 @@
 using Google.Apis.Auth;
 using Microsoft.Extensions.Options;
-using Server.config.AuthProviders;
+using Server.Config.AuthProviders;
 using Server.Exceptions;
 using Server.Interfaces;
 using Server.Models.Domain;

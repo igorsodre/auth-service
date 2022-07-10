@@ -2,7 +2,7 @@ using System.Reflection;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace Server.config;
+namespace Server.Config;
 
 public class SwaggerConfiguration : IConfigurationInstaller
 {
@@ -49,9 +49,6 @@ public class SwaggerConfiguration : IConfigurationInstaller
                         }
                     }
                 );
-                // var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                // var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                // c.IncludeXmlComments(xmlPath);
             }
         );
         services.AddSwaggerExamplesFromAssemblyOf<Program>();

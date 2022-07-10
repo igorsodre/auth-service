@@ -1,11 +1,11 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Server.config.AuthProviders;
+using Server.Config.AuthProviders;
 using Server.Interfaces;
 using Server.Services;
 
-namespace Server.config;
+namespace Server.Config;
 
 public class AuthenticationConfiguration : IConfigurationInstaller
 {

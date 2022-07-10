@@ -10,6 +10,5 @@ public class DataAccessToDomainProfile : Profile
     public DataAccessToDomainProfile()
     {
         CreateMap<ApplicationUser, User>();
-        
     }
 }

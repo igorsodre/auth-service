@@ -4,7 +4,7 @@ using Server.Interfaces;
 using Server.Middlewares;
 using Server.Services;
 
-namespace Server.config;
+namespace Server.Config;
 
 public class MvcConfigutation : IConfigurationInstaller
 {

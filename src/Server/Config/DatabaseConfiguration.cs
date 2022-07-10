@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Server.Interfaces;
 using Server.Repositories;
 
-namespace Server.config;
+namespace Server.Config;
 
 public class DatabaseConfiguration : IConfigurationInstaller
 {
