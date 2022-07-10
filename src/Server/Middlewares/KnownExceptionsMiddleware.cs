@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Filters;
 using Server.Exceptions;
 using Server.Extensions;
 
