@@ -7,11 +7,11 @@ using Server.Models.Domain;
 
 namespace Server.Services;
 
-public class AccountService : IAccountService
+public class GoogleAccountService : IGoogleAccountService
 {
     private readonly GoogleJsonWebSignature.ValidationSettings _validationSettings;
 
-    public AccountService(IOptions<GoogleSettings> googleSettings)
+    public GoogleAccountService(IOptions<GoogleSettings> googleSettings)
     {
         var settings = googleSettings.Value;
         _validationSettings = new GoogleJsonWebSignature.ValidationSettings()
@@ -20,7 +20,7 @@ public class AccountService : IAccountService
         };
     }
 
-    public async Task<GoogleJsonWebSignature.Payload> VerifyGoogleToken(ExternalAuthPayload payload)
+    public async Task<GoogleJsonWebSignature.Payload> VerifyToken(ExternalAuthPayload payload)
     {
         try
         {

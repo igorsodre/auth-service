@@ -10,24 +10,24 @@ namespace Server.Services;
 
 public class ExternalAuthService : IExternalAuthService
 {
-    private readonly IAccountService _accountService;
+    private readonly IGoogleAccountService _googleAccountService;
     private readonly IUserRepository _userRepository;
     private readonly ITokenService _tokenService;
 
     public ExternalAuthService(
-        IAccountService accountService,
+        IGoogleAccountService googleAccountService,
         IUserRepository userRepository,
         ITokenService tokenService
     )
     {
-        _accountService = accountService;
+        _googleAccountService = googleAccountService;
         _userRepository = userRepository;
         _tokenService = tokenService;
     }
 
     public async Task<LoginResult> Login(ExternalAuthPayload payload)
     {
-        var idTokenInfo = await _accountService.VerifyGoogleToken(payload);
+        var idTokenInfo = await _googleAccountService.VerifyToken(payload);
         var user = await _userRepository.FindByEmail(idTokenInfo.Email) ?? await CreateUser(idTokenInfo);
 
         var (accessToken, refreshtoken) = GenerateTokens(user);

@@ -26,7 +26,7 @@ public class MvcConfigutation : IConfigurationInstaller
 
     private static void AddDependencyInjection(IServiceCollection services)
     {
-        services.AddScoped<IAccountService, AccountService>();
+        services.AddScoped<IGoogleAccountService, GoogleAccountService>();
         services.AddScoped<IExternalAuthService, ExternalAuthService>();
     }
 }
