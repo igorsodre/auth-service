@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "src\Server\Server
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "src\DataAccess\DataAccess.csproj", "{DD568AB3-F556-41D0-B5FD-7422D49D1B61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "src\WebUI\WebUI.csproj", "{9DB0CFDD-4970-4EE4-B2D6-B23CE0BB6942}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B24425BA-A1F4-4FC0-A730-328E5D346302} = {A007C73E-0B98-435D-9A6A-022E36A906AF}
 		{DD568AB3-F556-41D0-B5FD-7422D49D1B61} = {A007C73E-0B98-435D-9A6A-022E36A906AF}
+		{9DB0CFDD-4970-4EE4-B2D6-B23CE0BB6942} = {A007C73E-0B98-435D-9A6A-022E36A906AF}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B24425BA-A1F4-4FC0-A730-328E5D346302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +27,9 @@ Global
 		{DD568AB3-F556-41D0-B5FD-7422D49D1B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD568AB3-F556-41D0-B5FD-7422D49D1B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD568AB3-F556-41D0-B5FD-7422D49D1B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DB0CFDD-4970-4EE4-B2D6-B23CE0BB6942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB0CFDD-4970-4EE4-B2D6-B23CE0BB6942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB0CFDD-4970-4EE4-B2D6-B23CE0BB6942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB0CFDD-4970-4EE4-B2D6-B23CE0BB6942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
