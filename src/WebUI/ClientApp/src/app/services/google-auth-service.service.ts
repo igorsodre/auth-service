@@ -3,7 +3,6 @@ import {
   SocialAuthService,
   SocialUser,
 } from '@abacritt/angularx-social-login';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -12,11 +11,8 @@ import { Subject } from 'rxjs';
 })
 export class GoogleAuthServiceService {
   private extAuthChangeSub = new Subject<SocialUser>();
-  public extAuthChanged = this.extAuthChangeSub.asObservable();
-  constructor(
-    private http: HttpClient,
-    private externalAuthService: SocialAuthService
-  ) {
+  public socialUser$ = this.extAuthChangeSub.asObservable();
+  constructor(private externalAuthService: SocialAuthService) {
     this.externalAuthService.authState.subscribe((user) => {
       this.extAuthChangeSub.next(user);
     });

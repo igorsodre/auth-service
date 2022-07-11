@@ -12,9 +12,7 @@ const socialLoginProvider = {
     providers: [
       {
         id: GoogleLoginProvider.PROVIDER_ID,
-        provider: new GoogleLoginProvider(environment.googleClientId, {
-          scopes: 'email',
-        }),
+        provider: new GoogleLoginProvider(environment.googleClientId),
       },
     ],
     onError: (err) => {

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220705022117_add identity tables")]
-    partial class Addidentitytables
+    [Migration("20220710221746_AddIdentityTables")]
+    partial class AddIdentityTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
