@@ -22,7 +22,7 @@ public class AuthController : ControllerBase
         _mapper = mapper;
     }
 
-    [HttpPost("/external")]
+    [HttpPost("external")]
     public async Task<ActionResult<ApiResponse<LoginResult>>> ExternalLogin(ExternalAuthRequest request)
     {
         var result = await _authService.Login(_mapper.Map<ExternalAuthPayload>(request));

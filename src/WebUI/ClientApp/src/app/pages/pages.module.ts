@@ -6,6 +6,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { HomeComponent } from './home/home.component';
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,13 @@ import { HomeComponent } from './home/home.component';
     FetchDataComponent,
     HomeComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SocialLoginModule,
+    AppRoutingModule,
+  ],
   exports: [NavMenuComponent],
 })
 export class PagesModule {}

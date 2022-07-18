@@ -21,11 +21,13 @@ public class MvcConfigutation : IConfigurationInstaller
                 }
             );
 
+        var origins = new List<string>();
+        configuration.GetSection("Cors:AllowedOrigins").Bind(origins);
         services.AddCors(
             options => {
                 options.AddDefaultPolicy(
                     policyBuilder => {
-                        policyBuilder.WithOrigins(configuration["Cors:AllowedOrigins"])
+                        policyBuilder.WithOrigins(origins.ToArray())
                             .AllowAnyHeader()
                             .AllowAnyMethod()
                             .AllowCredentials();

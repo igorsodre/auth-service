@@ -10,19 +10,25 @@ export class HomeComponent {
   constructor(
     private gAuthService: GoogleAuthServiceService,
     private internalAuthService: InternalAuthServiceService
-  ) {}
+  ) {
+    this.setupLogin();
+  }
 
-  login() {
-    console.log('Clicked login');
-    this.gAuthService.signInWithGoogle();
+  setupLogin() {
     this.gAuthService.socialUser$.subscribe((socialUser) => {
-      console.log('\n\n\n ========= Logged in   ================\n');
-      console.log(socialUser);
-      console.log('\n\n\n========================\n');
-      this.internalAuthService.loginWithGoogle({
-        idToken: socialUser.idToken,
-        provider: socialUser.provider,
-      });
+      this.internalAuthService
+        .loginWithGoogle({
+          idToken: socialUser.idToken,
+          provider: socialUser.provider,
+        })
+        .subscribe((response) => {
+          console.log('\n===Loging response\n');
+          console.log(response);
+        });
     });
+  }
+
+  async login() {
+    await this.gAuthService.signInWithGoogle();
   }
 }

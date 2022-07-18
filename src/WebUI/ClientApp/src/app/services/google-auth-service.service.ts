@@ -19,10 +19,10 @@ export class GoogleAuthServiceService {
   }
 
   public signInWithGoogle = () => {
-    this.externalAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    return this.externalAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   };
 
   public signOutExternal = () => {
-    this.externalAuthService.signOut();
+    return this.externalAuthService.signOut();
   };
 }

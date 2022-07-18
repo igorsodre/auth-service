@@ -1,9 +1,12 @@
-import { environment } from './../environments/environment.prod';
+import { environment } from './../environments/environment';
 import {
   GoogleLoginProvider,
   SocialAuthServiceConfig,
 } from '@abacritt/angularx-social-login';
 import { Provider } from '@angular/core';
+import { ManageHttpInterceptor } from './interceptors/manage-http.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpCancelService } from './services/http-cancel.service';
 
 const socialLoginProvider = {
   provide: 'SocialAuthServiceConfig',
@@ -21,6 +24,16 @@ const socialLoginProvider = {
   } as SocialAuthServiceConfig,
 };
 
-const providers: Provider[] = [socialLoginProvider];
+const httpInteruptCancelledCalls = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: ManageHttpInterceptor,
+  multi: true,
+};
+
+const providers: Provider[] = [
+  HttpCancelService,
+  socialLoginProvider,
+  httpInteruptCancelledCalls,
+];
 
 export default providers;
